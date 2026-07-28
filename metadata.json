@@ -1,0 +1,6 @@
+{
+  "name": "PUREATY Tiffin Service",
+  "description": "Premium, healthy, and hygienic homemade tiffin delivery service offering affordable subscription plans and dynamic weekly menus.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

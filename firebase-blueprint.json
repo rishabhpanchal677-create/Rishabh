@@ -1,0 +1,71 @@
+{
+  "collections": {
+    "users": {
+      "description": "User profiles, credentials, active subscription plans, remaining credits.",
+      "schema": {
+        "id": "string (matches UID)",
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "address": "string",
+        "landmark": "string (optional)",
+        "isAdmin": "boolean",
+        "activePlanId": "string (optional)",
+        "activePlanName": "string (optional)",
+        "mealsRemaining": "number (optional)",
+        "totalPaid": "number (optional)",
+        "createdAt": "timestamp",
+        "subscriptionExpiresAt": "string (optional)"
+      }
+    },
+    "orders": {
+      "description": "Log of subscription orders, checkout payments, and tracking details.",
+      "schema": {
+        "id": "string",
+        "userId": "string",
+        "userName": "string",
+        "userPhone": "string",
+        "planId": "string",
+        "planName": "string",
+        "price": "number",
+        "mealPreference": "string (lunch/dinner)",
+        "timePreference": "string",
+        "address": "string",
+        "landmark": "string",
+        "extraRotis": "boolean",
+        "paymentMethod": "string",
+        "paymentStatus": "string (paid/pending)",
+        "transactionId": "string",
+        "orderStatus": "string (placed/cooking/dispatched/delivered)",
+        "eta": "string",
+        "createdAt": "timestamp"
+      }
+    },
+    "skip_records": {
+      "description": "Log of skipped/hold meal dates for active user subscriptions.",
+      "schema": {
+        "id": "string",
+        "userId": "string",
+        "date": "string (YYYY-MM-DD)",
+        "mealPreference": "string (lunch/dinner/both)",
+        "createdAt": "timestamp"
+      }
+    },
+    "deliveries": {
+      "description": "Log of daily active tiffin shipments, both seeded mocks and real user enrollments.",
+      "schema": {
+        "id": "string",
+        "name": "string",
+        "phone": "string",
+        "address": "string",
+        "sector": "string",
+        "mealPreference": "string (lunch/dinner/both)",
+        "activePlanName": "string",
+        "mealsRemaining": "number",
+        "tiffinId": "string",
+        "deliveryStatus": "string (pending/dispatched/delivered/skipped)",
+        "skipReason": "string (optional)"
+      }
+    }
+  }
+}

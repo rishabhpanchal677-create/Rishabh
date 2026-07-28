@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Barabara";
+  src: url("https://db.onlinewebfonts.com/t/6b3ca8e9bfca4c29df62ce9d9b68e6e5.eot");
+  src: url("https://db.onlinewebfonts.com/t/6b3ca8e9bfca4c29df62ce9d9b68e6e5.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/6b3ca8e9bfca4c29df62ce9d9b68e6e5.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/6b3ca8e9bfca4c29df62ce9d9b68e6e5.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/6b3ca8e9bfca4c29df62ce9d9b68e6e5.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/6b3ca8e9bfca4c29df62ce9d9b68e6e5.svg#Barabara") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-emerald-50: #f0fdf4;
+  --color-emerald-100: #dcfce7;
+  --color-emerald-500: #39ff14; /* Pure Neon Green */
+  --color-emerald-600: #22c55e; /* Bright Green */
+  --color-emerald-700: #15803d;
+  --color-emerald-800: #166534; 
+  --color-emerald-900: #14532d;
+  --color-emerald-950: #052e16;
+
+  --color-orange-500: #39ff14; /* Bright Neon Green */
+  --color-orange-600: #22c55e;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barabara", "Space Grotesk", sans-serif;
+
+  --shadow-sm: 0 4px 20px rgba(34, 197, 94, 0.03);
+  --shadow-md: 0 10px 30px -3px rgba(34, 197, 94, 0.05);
+  --shadow-lg: 0 20px 40px -4px rgba(34, 197, 94, 0.08);
+}
+
+/* Responsive Light mode and Dark mode backgrounds */
+:root {
+  color-scheme: light;
+  background-color: #ffffff;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #171717;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display, .brand-logo {
+  font-family: var(--font-display);
+}
+
+/* Dark mode overrides */
+.dark {
+  color-scheme: dark;
+  background-color: #000000;
+}
+
+.dark body {
+  background-color: #000000;
+  color: #f5f5f5;
+}
+
+/* Beautiful custom style accents for the brand */
+.text-emerald-500,
+.text-emerald-600 {
+  color: #15803d; /* Legible green in light mode */
+}
+
+.dark .text-emerald-500,
+.dark .text-emerald-600 {
+  color: #39ff14 !important; /* Pure Neon Green in dark mode */
+}
+
+/* Buttons and primary elements */
+.bg-emerald-500,
+.bg-emerald-600,
+.bg-orange-500 {
+  background-color: #16a34a; /* Emerald Green in light mode */
+  color: #ffffff !important;
+}
+
+.bg-emerald-500:hover,
+.bg-emerald-600:hover,
+.bg-orange-500:hover {
+  background-color: #15803d;
+}
+
+.dark .bg-emerald-500,
+.dark .bg-emerald-600,
+.dark .bg-orange-500 {
+  background-color: #39ff14 !important;
+  color: #000000 !important;
+}
+
+.dark .bg-emerald-500:hover,
+.dark .bg-emerald-600:hover,
+.dark .bg-orange-500:hover {
+  background-color: #26df04 !important;
+}
+
+/* Other specific text adjustments */
+.text-amber-500 {
+  color: #eab308;
+}
+
+.dark .text-amber-500 {
+  color: #39ff14 !important;
+}
+
+.fill-amber-500 {
+  fill: #eab308;
+}
+
+.dark .fill-amber-500 {
+  fill: #39ff14 !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+/* Custom fine scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #475569;
+}
